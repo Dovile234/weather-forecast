@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="blurred">
+    <div class="container">
+      <div class="current-info">
+        <div id="current-time">12:30</div>
+        <p id="date">Monday, 11 February</p>
+        <div class="search">
+          <input class="city-input" type="text" placeholder="Search" />
+          <button class="search-button" onclick="getForecast()">
+            <img
+              src="./[CITYPNG.COM]Search Explore White Icon Transparent PNG - 4000x4000.png"
+              alt="search"
+            />
+          </button>
+        </div>
+        <div class="display-none" style="display: none">
+          <p id="city">Vilnius</p>
+
+          <div class="temp-description">
+            <span id="temp">2°C</span>
+            <span id="temp-feel">Feels like -1°C</span>
+          </div>
+          <div class="description-wrap">
+            <img src="" alt="icon" class="icon" />
+            <span id="description">Mist</span>
+          </div>
+
+          <p id="humidity">Humidity: 100%</p>
+          <p id="wind">Wind: 3.09 m/s</p>
+          <p id="pressure">Pressure: 1024 hPa</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="future-forecast" style="display: none">
+      <div class="future-forecast-wrap"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

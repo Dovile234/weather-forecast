@@ -1,0 +1,128 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #181818;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  height: 100vh;
+  background-image: url(./paul-earle-xJ2tjuUHD9M-unsplash.jpg);
+}
+
+.blurred {
+  filter: blur(3px);
+  overflow: hidden;
+}
+.container {
+  width: 1440px;
+  margin: 50px auto;
+}
+
+#current-time {
+  font-size: 40px;
+  margin: 15px 0 5px;
+}
+#date {
+  margin: 0;
+}
+
+.search {
+  display: flex;
+  margin-top: 20px;
+}
+
+.city-input {
+  padding: 8px;
+  border-radius: 15px;
+  font-size: 16px;
+  background-color: rgba(241, 241, 241, 0.329);
+  color: white;
+  border: 2px solid rgba(216, 215, 215, 0.452);
+  font-weight: 500;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  height: 38px;
+  position: relative;
+  left: -45px;
+}
+.search-button img {
+  height: 100%;
+  cursor: pointer;
+}
+
+#city {
+  font-size: 30px;
+  margin: 20px 0 7px;
+}
+
+.temp-description {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#temp {
+  font-size: 30px;
+  margin: 10px 0;
+  padding-right: 8px;
+  border-right: 2px solid white;
+}
+
+#temp-feel {
+  padding-left: 8px;
+}
+
+.description-wrap {
+  display: flex;
+  align-items: center;
+}
+
+#description {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+#humidity,
+#wind,
+#pressure {
+  font-size: 18px;
+}
+
+.future-forecast {
+  background-color: rgba(7, 14, 54, 0.185);
+  padding: 20px 0;
+}
+
+.future-forecast-wrap {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 20px auto;
+}
+
+.item {
+  padding: 15px;
+  text-align: center;
+}
+
+.item p {
+  font-size: 25px;
+  margin: 0 0 10px;
+}
+
+.clouds {
+  text-transform: capitalize;
+}
+
+.day {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
