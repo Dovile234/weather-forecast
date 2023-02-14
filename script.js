@@ -5,13 +5,13 @@ let display = document.querySelector(".display-none");
 let forecastDisplay = document.querySelector(".future-forecast");
 
 const days = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ];
 
 const months = [
