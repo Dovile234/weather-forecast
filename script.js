@@ -160,7 +160,6 @@ function dayForecast(forecast) {
 
 function setBg(data) {
   let bgImage = document.getElementById("bgImage");
-  console.log(bgImage);
   if (data.weather[0].description.includes("clouds")) {
     bgImage.style.backgroundImage = "url(./img/clouds.jpg)";
   }
