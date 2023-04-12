@@ -14,18 +14,21 @@
     />
   </head>
   <body class="blurred">
+    <div id="bgImage"></div>
     <div class="container">
       <div class="current-info">
-        <div id="current-time">12:30</div>
-        <p id="date">Monday, 11 February</p>
-        <div class="search">
-          <input class="city-input" type="text" placeholder="Search" />
-          <button class="search-button" onclick="getForecast()">
-            <img
-              src="./[CITYPNG.COM]Search Explore White Icon Transparent PNG - 4000x4000.png"
-              alt="search"
-            />
-          </button>
+        <div class="search-container">
+          <div id="current-time">12:30</div>
+          <p id="date">Monday, 11 February</p>
+          <form class="search">
+            <input class="city-input" type="text" placeholder="Search" />
+            <button type="submit" class="search-button">
+              <img
+                src="./img/[CITYPNG.COM]Search Explore White Icon Transparent PNG - 4000x4000.png"
+                alt="search"
+              />
+            </button>
+          </form>
         </div>
         <div class="display-none" style="display: none">
           <p id="city">Vilnius</p>

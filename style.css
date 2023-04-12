@@ -5,12 +5,22 @@
 }
 
 body {
-  background-color: #181818;
   margin: 0;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
   height: 100vh;
-  background-image: url(./paul-earle-xJ2tjuUHD9M-unsplash.jpg);
+  width: 100%;
+}
+
+#bgImage {
+  background-image: url(./img/clear.jpg);
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .blurred {
@@ -18,7 +28,8 @@ body {
   overflow: hidden;
 }
 .container {
-  width: 1440px;
+  max-width: 1600px;
+  padding: 0 40px;
   margin: 50px auto;
 }
 
@@ -97,13 +108,13 @@ body {
 
 .future-forecast {
   background-color: rgba(7, 14, 54, 0.185);
-  padding: 20px 0;
+  padding: 20px 40px;
 }
 
 .future-forecast-wrap {
   display: flex;
   justify-content: space-between;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 20px auto;
 }
 
@@ -125,4 +136,95 @@ body {
   font-size: 20px;
   font-weight: 600;
   margin: 0;
+}
+
+@media (max-width: 820px) {
+  .container {
+    width: 100%;
+    padding: 0 30px;
+  }
+
+  .current-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #current-time {
+    font-size: 50px;
+  }
+
+  #date {
+    font-size: 25px;
+  }
+
+  #city {
+    font-size: 35px;
+  }
+
+  .future-forecast {
+    width: 100%;
+    padding: 20px 30px;
+  }
+
+  .future-forecast-wrap {
+    flex-direction: column;
+  }
+
+  .future-forecast-wrap .item {
+    display: grid;
+    grid-template-columns: 33% 20% 19% 28%;
+    align-items: center;
+    text-align: start;
+  }
+}
+
+@media (max-width: 820px) {
+  .current-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .future-forecast-wrap {
+    flex-direction: row;
+    width: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+
+  .future-forecast-wrap::-webkit-scrollbar {
+    display: none;
+  }
+
+  .future-forecast-wrap .item {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    text-align: center;
+  }
+
+  .search-container {
+    width: 230px;
+  }
+
+  .display-none {
+    width: 230px;
+  }
+
+  .item p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    margin: 20px auto;
+  }
+
+  .future-forecast-wrap .item {
+    min-width: 180px;
+  }
+
+  .future-forecast-wrap {
+    margin: 0 auto;
+  }
 }

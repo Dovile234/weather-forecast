@@ -47,6 +47,24 @@ setInterval(() => {
 
 window.addEventListener("load", () => {
   if (navigator.geolocation) {
+    function getDefault() {
+      let lon = 25.279652;
+      let lat = 54.687157;
+      display.style.display = "block";
+      forecastDisplay.style.display = "block";
+
+      fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          weatherReport(data);
+          setBg(data);
+        });
+    }
+
+    getDefault();
+
     navigator.geolocation.getCurrentPosition((position) => {
       let lon = position.coords.longitude;
       let lat = position.coords.latitude;
@@ -59,15 +77,14 @@ window.addEventListener("load", () => {
         .then((res) => res.json())
         .then((data) => {
           weatherReport(data);
+          setBg(data);
         });
     });
-  } else {
-    document.getElementById("demo").innerHTML =
-      "Geolocation is not supported by this browser.";
   }
 });
 
-function getForecast() {
+document.querySelector(".search").addEventListener("submit", function (event) {
+  event.preventDefault();
   display.style.display = "block";
   forecastDisplay.style.display = "block";
   let city = document.querySelector(".city-input").value;
@@ -77,9 +94,10 @@ function getForecast() {
     .then((res) => res.json())
     .then((data) => {
       weatherReport(data);
+      setBg(data);
     });
   document.querySelector(".city-input").value = "";
-}
+});
 
 function weatherReport(data) {
   fetch(
@@ -137,5 +155,22 @@ function dayForecast(forecast) {
     document.querySelector(".future-forecast-wrap").appendChild(div);
 
     div.append(day, icon, temp, description);
+  }
+}
+
+function setBg(data) {
+  let bgImage = document.getElementById("bgImage");
+  console.log(bgImage);
+  if (data.weather[0].description.includes("clouds")) {
+    bgImage.style.backgroundImage = "url(./img/clouds.jpg)";
+  }
+  if (data.weather[0].description.includes("rain")) {
+    bgImage.style.backgroundImage = "url(./img/rain.jpg)";
+  }
+  if (data.weather[0].description.includes("snow")) {
+    bgImage.style.backgroundImage = "url(./img/snow.jpg)";
+  }
+  if (data.weather[0].description.includes("clear")) {
+    bgImage.style.backgroundImage = "url(./img/clear.jpg)";
   }
 }
